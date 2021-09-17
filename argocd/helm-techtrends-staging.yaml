@@ -9,7 +9,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: help/staging
-    repoURL: https://github.com/Dezo2018/techtrends-kubernetes
+    helm:
+      valueFiles:
+        - values-staging.yaml
+    path: helm
+    repoURL: https://github.com/Dezo2018/techtrends-complete
     targetRevision: HEAD
   syncPolicy: {}
