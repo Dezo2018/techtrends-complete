@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: techtrends-staging
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: help/staging
+    repoURL: https://github.com/Dezo2018/techtrends-kubernetes
+    targetRevision: HEAD
+  syncPolicy: {}
